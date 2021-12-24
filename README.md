@@ -15,8 +15,9 @@ This template has undergone changes as stated below
 This HexaEight Authentication template is specific to Vercel Deployment and requires the following mandatory environment variables 
 for HexaEight Serverless to start authenticating users.
 
-clientappcode
-RapidAPIKey
+> clientappcode
+> 
+> RapidAPIKey
 
 ###### Get an API Key for HexaEight Secure Platform from [RapidAPI](https://rapidapi.com/hexaeight-hexaeight-default/api/hexaeight-sso-platform/pricing)
 
