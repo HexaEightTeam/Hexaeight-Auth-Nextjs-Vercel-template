@@ -5,11 +5,11 @@ This is a [Next.js](https://nextjs.org/) cloned project bootstrapped with [`crea
 This template has undergone changes as stated below
 
 > /next.config.js ==>(Modified) Rewrites all requests ending with /login to /api/loginpage
-
+>
 > /pages/api/loginpage.js ==>(Added) Contains HexaEight Serverless Server Side Code Base which authenticates email users
-
+>
 > /pages/_app.js ==>(Modified) Implements automatic Silent refresh of user session using setinterval function.
-
+>
 > /pages/_middleware.ts ==>(Added/Modified) The middleware typescript function which redirects the user to login page if the user session has expired
 
 This HexaEight Authentication template is specific to Vercel Deployment and requires the following mandatory environment variables 
