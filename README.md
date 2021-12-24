@@ -56,6 +56,11 @@ the HexaEight Servername and cookiename environment variables accordingly to sup
 
 Additional Environment variables are available for customization. Refer to the Documentation Section for more details.
 
+You can use the below Button to Deploy on Vercel Platform.
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fhello-world&env=clientappcode,RapidAPIKey&envDescription=Client%20ID%20used%20for%20identifying%20the%20login%20application%20authenticating%20your%20users%20And%20the%20API%20Key%20used%20to%20fetch%20identity%20information%20of%20user&envLink=https%3A%2F%2Fdocs.hexaeight.com%2Fserverless.html)
+
+
 
 
 
