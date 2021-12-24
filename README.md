@@ -2,6 +2,12 @@
 
 This is a [Next.js](https://nextjs.org/) cloned project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Quick Deploy To Vercel
+
+You can use the below Button to Deploy on Vercel Platform.
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FHexaEightTeam%2FHexaeight-Auth-Nextjs-Vercel-template&env=clientappcode,RapidAPIKey&envDescription=Client%20ID%20used%20for%20identifying%20the%20login%20application%20authenticating%20your%20users%20And%20the%20API%20Key%20used%20to%20fetch%20identity%20information%20of%20user&envLink=https%3A%2F%2Fdocs.hexaeight.com%2Fserverless.html)
+
 This template has undergone changes as stated below
 
 > /next.config.js ==>(Modified) Rewrites all requests ending with /login to /api/loginpage
@@ -55,10 +61,6 @@ This template by default uses the vercel provided domain name as the custom doma
 the HexaEight Servername and cookiename environment variables accordingly to support your custom domain name.  Refer to Documentation for additional details.
 
 Additional Environment variables are available for customization. Refer to the Documentation Section for more details.
-
-You can use the below Button to Deploy on Vercel Platform.
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FHexaEightTeam%2FHexaeight-Auth-Nextjs-Vercel-template&env=clientappcode,RapidAPIKey&envDescription=Client%20ID%20used%20for%20identifying%20the%20login%20application%20authenticating%20your%20users%20And%20the%20API%20Key%20used%20to%20fetch%20identity%20information%20of%20user&envLink=https%3A%2F%2Fdocs.hexaeight.com%2Fserverless.html)
 
 
 
