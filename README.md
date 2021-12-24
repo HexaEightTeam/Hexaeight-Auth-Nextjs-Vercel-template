@@ -1,34 +1,57 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Getting Started with HexaEight Authentication
 
-## Getting Started
+This is a [Next.js](https://nextjs.org/) cloned project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-First, run the development server:
+This template has undergone changes as stated below
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+/next.config.js ==>(Modified) Rewrites all requests ending with /login to /api/loginpage
+/pages/api/loginpage.js ==>(Added) Contains HexaEight Serverless Server Side Code Base which authenticates email users
+/pages/_app.js ==>(Modified) Implements automatic Silent refresh of user session using setinterval function.
+/pages/_middleware.ts ==>(Added/Modified) The middleware typescript function which redirects the user to login page if the user session has expired
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This HexaEight Authentication template is specific to Vercel Deployment and requires the following mandatory environment variables 
+for HexaEight Serverless to start authenticating users.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+clientappcode
+RapidAPIKey
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+###### Get an API Key for HexaEight Secure Platform from [RapidAPI](https://rapidapi.com/hexaeight-hexaeight-default/api/hexaeight-sso-platform/pricing)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+A Free Plan is available if you want to test the authentication. Once you have subscribed to a plan, your Rapid API key is available 
+@
+[Rapid API Dashboard](https://rapidapi.com/developer/dashboard) --> Choose the default application --> Security on the left hand pane --> Application Key
+Copy your API Key 
 
-## Learn More
+  
+###### Run the below command to Generate a New Client App Code (or Client ID) for your Login Application using RAPID API Key hosted by CF Worker
 
-To learn more about Next.js, take a look at the following resources:
+Input the Rapid API Key and change the data field to reflect your application name.  This application name is for your internal use to identify
+the login page from which the user got authenticated.  This output of this is a Client ID (similar to Oauth Client ID which is used to identify Apps)
+This Client ID is tied to the Rapid API user account, so you can only decode the tokens for this Client ID using the same API keys associated with 
+your Rapid API user account.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+###### From Unix Or Mac using Shell
+>     curl --header 'x-rapidapi-key: your rapidapi key' --data 'Default Login Application v 1.0' --request POST --url https://hexaeight-sso-platform.p.rapidapi.com/get-new-securetoken --header 'content-type: text/plain' --header 'x-rapidapi-host: hexaeight-sso-platform.p.rapidapi.com'
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+OR
 
-## Deploy on Vercel
+###### From Windows using Powershell
+>     $h = @{"x-rapidapi-host"="hexaeight-sso-platform.p.rapidapi.com"; "x-rapidapi-key"="your rapid api key";}
+>     $response = Invoke-WebRequest -Body 'Default Login Application v 1.0' -Uri 'https://hexaeight-sso-platform.p.rapidapi.com/get-new-securetoken' -Method POST -Headers $h -ContentType 'text/plain';$response.Content;
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The above output displayed is the ClientID.
+
+You will need this ClientID and RapidApi Key to deploy this template using the Deploy button. 
+
+This template by default uses a Public Datasink to deploy HexaEight Serverless, If you want a private datasink, you should subscribe to Macrometa.com which provides
+a cheap KV Datastore which is supported by default.  Refer to documentation for additional details.
+
+This template by default uses the vercel provided domain name as the custom domain name.  We recommend you deploy a custom domain and set
+the HexaEight Servername and cookiename environment variables accordingly to support your custom domain name.  Refer to Documentation for additional details.
+
+Additional Environment variables are available for customization. Refer to the Documentation Section for more details.
+
+
+
+
